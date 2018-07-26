@@ -1,6 +1,8 @@
 :root {
---background-color: white;
+    --background-color: white;
+    --width-of-header: 8em;
 }
+
 body {
     color: grey;
     font-family: sans-serif;
@@ -12,11 +14,11 @@ body {
 
 @media (min-width: 200px) {
     h1 {
-        font-size: 4em;
+        font-size: 2em;
         font-weight: 200;
     }
     p {
-        font-size: 3em;
+        font-size: 1em;
     }
     #gallery-header {
         width: 100%;
@@ -33,17 +35,49 @@ body {
         width: 100%;
         column-count: 2;
         column-gap: 5%;
-        
     }
     .photo {
-        width: 100%;
+        /* width: 100%;
         margin-top: 4%;
-        padding: 0;
+        padding: 0; */
     }
     .image {
         width: 100%;
         border: 5px solid var(--background-color);
-        border-radius: 3em;
-        
+        border-radius: 2em;
     }
+}
+
+@media (min-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    #gallery-header {
+        width: var(--width-of-header);
+        height: 175px;
+        padding: 2% 2% 5em 2%;
+        border: 5px dashed grey;
+        border-radius: 1.5em;
+        margin-bottom: auto;
+    }
+    #gallery {
+        width: calc(94% - var(--width-of-header));
+        column-count: 3;
+        column-gap: 3%;
+    }
+    @media (min-width: 1000px) {
+        #gallery {
+            column-count: 4;
+        }
+    }
+    @media (min-width: 1400px) {
+        #gallery {
+            column-count: 5;
+        }
+    }
+}
+
 }
